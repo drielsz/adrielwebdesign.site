@@ -78,7 +78,7 @@
 .card-projetos a {
     position: relative;
     padding: 0.4rem;
-
+    text-decoration: none;
 }
 .card-projetos .visit-button-card img {
     position: relative;
