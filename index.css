@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,7 @@
 
 html {
     background-color: var(--background-color);
-    font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
 }
 
 li a {
@@ -32,6 +31,8 @@ h1 {
 
 header {
     border-bottom: 1px solid #FFFFFF21;
+    width: 100vw;
+
 }
 
 nav {
@@ -51,7 +52,7 @@ ul {
     margin-left: 1rem;
     height: 40px;
     width: 120px;
-    border-radius:5px;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -125,8 +126,8 @@ main {
     border-radius: var(--border-radius);
     border: 0px;
     min-width: 12.8125rem;
-    max-height: 2.3rem;
-    min-height: 2.3rem;
+    max-height: 1.7rem;
+    min-height: 1.7rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -358,10 +359,56 @@ main.blur-main {
 .nav-menu li {
     width: fit-content;
     height: fit-content;
+    padding: 10px;
 }
 
 .hamburguer.active {
     background-color: #27272a;
+}
+
+li.nav-item:first-child img {
+    margin-left: 0.2rem;
+}
+
+.dropdown-div {
+    position: absolute;
+    border: 1px solid #FFFFFF21;
+    border-radius: 6px;
+    top: 80px;
+    background-color: black;
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: var(--small-distance-width);
+    transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdown-div.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+p.description-dropdown {
+    color: var(--gray-color);
+}
+
+li.dropdown-li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    margin-bottom: var(--small-distance-height);
+    margin-left: 0;
+}
+.dropdown-li:last-child {
+    margin-bottom: 0;
 }
 
 @media(max-width: 768px) {
@@ -400,18 +447,17 @@ main.blur-main {
         overflow-y: scroll;
         /* Permite rolagem interna */
         max-height: 0;
-        gap: 0;
         top: 6.4rem;
         left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
         flex-direction: column;
         background-color: black;
-        width: 100%;
+        width: 100vw;
         transition: max-height 0.8s ease-in, visibility 0.8s ease-in;
         /* Limita a altura do menu para garantir que ele não cubra a tela toda */
         z-index: 3;
-    }
-
-    .nav-menu {
         padding-top: 2rem;
         padding-bottom: 2rem;
         visibility: hidden;
