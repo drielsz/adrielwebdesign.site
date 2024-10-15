@@ -56,12 +56,25 @@ images.forEach((image, index) => {
 
     // Aplicar as cores ao container correspondente
     if (divContainerImages[index]) {
-      if (dominantColors.length === 1) {
-        // Se houver apenas uma cor, aplicar como fundo sólido
-        divContainerImages[index].style.backgroundColor = `rgb(${dominantColors[0]})`;
+      // Verifica se não há cores predominantes
+      if (dominantColors.length === 0) {
+        // Se não houver cores, aplicar branco
+        divContainerImages[index].style.backgroundColor = 'rgb(255,255,255, 0.3)';
       } else {
-        // Se houver duas cores, aplicar como gradiente
-        divContainerImages[index].style.background = `linear-gradient(to left, rgb(${dominantColors[0]}), rgb(${dominantColors[1]}))`;
+        // Verifica se a primeira cor é preta
+        const firstColor = dominantColors[0].split(',').slice(0, 3).join(',');
+        if (firstColor === '0,0,0') {
+          // Se a cor for preta, aplicar branco
+          divContainerImages[index].style.backgroundColor = 'rgb(255,255,255, 0.3)';
+        } else {
+          if (dominantColors.length === 1) {
+            // Se houver apenas uma cor, aplicar como fundo sólido
+            divContainerImages[index].style.backgroundColor = `rgb(${dominantColors[0]})`;
+          } else {
+            // Se houver duas cores, aplicar como gradiente
+            divContainerImages[index].style.background = `linear-gradient(to left, rgb(${dominantColors[0]}), rgb(${dominantColors[1]}))`;
+          }
+        }
       }
     }
   };
