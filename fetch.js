@@ -7,7 +7,6 @@ const navMenuBar = document.querySelectorAll(".nav-menubar");
 const dropdownMenu = document.querySelector(".dropdown-div")
 const dropdown = document.querySelector(".dropdown")
 
-
 hamburguer.addEventListener("click", () => {
   hamburguer.classList.toggle("active");  
   navMenu.classList.toggle("active");
@@ -25,3 +24,5 @@ dropdown.addEventListener("click", () => {
 dropdownMenu.addEventListener("mouseleave", () => {
   dropdownMenu.classList.toggle("active");
 })
+
+

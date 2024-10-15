@@ -28,14 +28,15 @@ li a {
 h1 {
     font-size: 1.0625rem;
 }
-
+header{
+    border-bottom: 1px solid #FFFFFF21;
+}
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #FFFFFF21;
+    padding-bottom: 2rem;   
 }
 
 ul {
@@ -45,8 +46,6 @@ ul {
 
 .flex-col li {
     margin-left: 1rem;
-    height: 40px;
-    width: 120px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -68,6 +67,7 @@ ul {
     margin-left: auto;
     padding-right: 2rem;
     padding-left: 2rem;
+    padding-bottom: 2rem;
 }
 
 .items-center {
@@ -379,6 +379,7 @@ li.nav-item:first-child img {
     transition: visibility 0.2s ease-in, opacity 0.2s ease-in;
     visibility: hidden;
     opacity: 0;
+    z-index: 23;
 }
 
 .dropdown-div.active {
