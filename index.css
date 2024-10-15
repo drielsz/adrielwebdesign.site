@@ -29,18 +29,13 @@ h1 {
     font-size: 1.0625rem;
 }
 
-header {
-    border-bottom: 1px solid #FFFFFF21;
-    width: 100vw;
-
-}
-
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    border-bottom: 1px solid #FFFFFF21;
 }
 
 ul {

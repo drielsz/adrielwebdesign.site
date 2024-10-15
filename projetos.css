@@ -64,6 +64,7 @@
     background-color: transparent;
     border: 1px solid #FFFFFF21;
     color: white;
+    text-wrap: nowrap;
 }
 
 .card-projetos img {
@@ -106,6 +107,10 @@ p.description-session{
     color: var(--gray-color);
     font-weight: bold;
     margin-bottom: calc(var(--small-distance-height)/2);
+}
+
+p.description-session a {
+    color: var(--gray-color);
 }
 
 .container-projetos {
