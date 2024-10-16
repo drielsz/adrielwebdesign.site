@@ -10,7 +10,7 @@
 }
 
 .rounded-language:hover {
-    background-color: #57575790;
+    background: linear-gradient(to left, #FFFFFF30, #57575780);
 }
 
 .rounded-language::before {
