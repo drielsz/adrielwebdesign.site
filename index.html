@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="preload" href="assets/face home.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap">
+    </noscript>
+
     <title>Adriel Laurentino</title>
 </head>
 
@@ -47,7 +54,7 @@
                     <li class="nav-item"><a target="_blank"
                             href="https://api.whatsapp.com/send/?phone=558486717880&text&type=phone_number&app_absent=0">Me
                             chama ai!</a></li>
-                    <li class="nav-item">Baixar CV</li>
+                    <!-- <li class="nav-item">Baixar CV</li> -->
 
                     <li class="nav-menubar-session">Eu</li>
                     <!-- <li class="nav-menubar"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -140,7 +147,7 @@
     </header>
     <main class="mx-auto max-w items-center">
         <div class="block-content">
-            <img class="image-adriel" src="assets/face home.png" alt="Adriel Foto">
+            <img class="image-adriel" srcset="assets/facehome.webp" alt="Adriel Foto">
             <div class="block-text">
                 <h1 class="name-image">Adriel Laurentino</h1>
                 <p>Estudante de engenharia de software</p>
@@ -156,9 +163,9 @@
         </div>
         <div class="block-buttons">
             <a href="https://www.instagram.com/adriellrnt/" target="_blank">Me acompanhe nas redes sociais <img
-                    src="assets/arrow.svg" alt="seta indicativa"></a>
+                    src="assets/arrow.svg" id="social-svg" alt="seta indicativa"></a>
             <a href="https://api.whatsapp.com/send/?phone=558486717880&text&type=phone_number&app_absent=0"
-                target="_blank">Entre em contato para mais</a>
+                target="_blank">Entre em contato para mais <img id="link-contact" src="assets/link.svg" alt="contact"/></a>
         </div>
 
         <div class="min-about">
