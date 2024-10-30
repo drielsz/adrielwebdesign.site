@@ -1,8 +1,9 @@
 .flex-col li,
 nav,
 ul {
-    display: flex
+    display: flex;
 }
+
 
 .max-w,
 li a {
@@ -12,6 +13,9 @@ li a {
 .mx-auto,
 nav {
     padding-bottom: 2rem
+}
+.navbar {
+    position: relative;
 }
 
 .min-about,
@@ -168,6 +172,7 @@ p.description-dropdown {
 .block-buttons #link-contact {
     margin-left: 10px !important;
 }
+
 .block-buttons a {
     margin-top: var(--small-distance-height);
     padding: .5rem .7rem .5rem .7rem;
@@ -301,7 +306,7 @@ footer .copyright {
 .bar,
 .nav-menu li.nav-menubar.active,
 li.nav-menubar-session.active {
-    display: block
+    display: flex
 }
 
 .bar {
@@ -341,7 +346,13 @@ main.blur-main {
     align-items: center;
     font-size: .875rem;
     line-height: 1.25rem;
-    font-weight: 500
+    font-weight: 500;
+    height: 2.25rem;
+    width: 100%;
+}
+
+.home, .projetos, .tecnologias {
+    background-color: #27272a;
 }
 
 .dropdown-div,
@@ -403,9 +414,11 @@ li.dropdown-li {
     }
 
     .nav-menu li.nav-menubar {
-        margin: 20px 0 0 4px;
-        padding: 0 !important;
-        overflow: visible
+        margin: 20px 0 0 0px;
+        box-sizing: border-box;
+        overflow: visible;
+        justify-content: flex-start !important;
+        align-items: center;
     }
 
     .nav-menu li.nav-menubar svg {
@@ -425,24 +438,25 @@ li.dropdown-li {
     .nav-menu {
         position: absolute;
         overflow-y: scroll;
-        max-height: 0;
+        min-height: 0;
         top: 6.4rem;
         left: 0;
         right: 0;
         bottom: 0;
         margin: 0;
         flex-direction: column;
-        background-color: #000;
+        box-sizing: border-box;
+        background-color: black;
         width: 100vw;
-        transition: max-height .8s ease-in, visibility .8s ease-in;
+        /* Garante que o padding não expanda o width */
+        transition: min-height .6s ease-in, visibility .6s ease-in;
         z-index: 3;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        visibility: hidden
+        padding: 1rem;
+        visibility: hidden;
     }
 
     .nav-menu.active {
-        max-height: 250px;
+        min-height: 350px;
         visibility: visible
     }
 
@@ -456,7 +470,9 @@ li.dropdown-li {
 
     .block-buttons a {
         width: 100%;
-        justify-content: center
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 45px;
     }
 
     .block-buttons a:nth-child(2) {
