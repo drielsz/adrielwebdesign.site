@@ -402,6 +402,72 @@ li.dropdown-li {
     margin-bottom: 0
 }
 
+.btn-click {
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+    min-width: 1em;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    outline: 0;
+    will-change: transform;
+}
+
+.btn-text{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.btn-click:hover .code-by, .btn-click:hover .adriel {
+    transform: translate(-63px, 0.6px) !important;
+}
+.btn-click:hover .credit {
+    transform: rotate(360deg);
+}
+
+.cbd {
+    position: relative;
+    overflow: hidden;
+}
+
+.credit {
+    padding-right: .3em;
+    transition: transform 0.5s ease-in-out;
+}
+.adriel {
+    position: relative;
+    display: inline-block;
+    padding-left: .05em;
+}
+
+.code-by {
+    position: relative;
+    display: inline-block;
+}
+
+.adriel, .code-by {
+    transition: transform 0.3s ease-in-out;
+}
+
+.oliveira{
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    transform: translateX(2.95em);
+    white-space: nowrap;
+}
+
+
 @media(max-width:768px) {
     .block-content img.image-adriel {
         width: 13rem;
