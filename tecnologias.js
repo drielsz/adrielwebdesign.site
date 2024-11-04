@@ -50,10 +50,6 @@ function getDominantColors(image) {
 images.forEach((image, index) => {
   image.onload = () => {
     const dominantColors = getDominantColors(image);
-    
-    // Exibir no console as cores predominantes
-    console.log(`As cores predominantes da imagem ${index + 1} são: rgb(${dominantColors.join('}) e rgb(')})`);
-
     // Aplicar as cores ao container correspondente
     if (divContainerImages[index]) {
       // Verifica se não há cores predominantes

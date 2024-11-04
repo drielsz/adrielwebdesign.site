@@ -10,10 +10,6 @@ li a {
     color: #fff
 }
 
-.mx-auto,
-nav {
-    padding-bottom: 2rem
-}
 .navbar {
     position: relative;
 }
@@ -37,7 +33,7 @@ li a {
 
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 :root {
@@ -48,7 +44,9 @@ li a {
     --small-distance-height: 1.563rem;
     --big-distance-width: 1.313rem;
     --big-distance-height: 3.125rem;
-    --gray-color: #A5A2A2
+    --gray-color: #A5A2A2;
+    --header-fontsize: .9375rem;
+    --h1-fontsize: 1rem
 }
 
 html {
@@ -59,17 +57,23 @@ html {
 }
 
 h1 {
-    font-size: 1.0625rem
+    font-size: var(--h1-fontsize)
 }
 
 header {
-    border-bottom: 1px solid #fffFFF21
+    border-bottom: 1px solid #fffFFF21;
+    font-size: var(--header-fontsize);
+}
+
+p{ 
+    font-size: var(--header-fontsize);
 }
 
 nav {
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 2rem
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
 }
 
 ul {
@@ -96,10 +100,13 @@ ul {
 .mx-auto {
     margin-right: auto;
     margin-left: auto;
-    padding-right: 2rem;
-    padding-left: 2rem
+    padding: 2rem;
 }
 
+
+.block-buttons a {
+    font-size: var(--header-fontsize);
+}
 
 
 .block-buttons a:nth-child(2),
@@ -293,7 +300,7 @@ footer .copyright {
 }
 
 .h1-about {
-    margin-bottom: calc(var(--small-distance-height)/2)
+    margin-bottom: calc(var(--small-distance-height)/4)
 }
 
 .hamburguer {
@@ -427,9 +434,14 @@ li.dropdown-li {
     will-change: transform;
 }
 
-.btn-click:hover .code-by, .btn-click:hover .adriel {
+.btn-click:hover .code-by {
     transform: translate(-63px, 0.6px) !important;
 }
+
+.btn-click:hover .adriel {
+    transform: translate(-60px, 0.6px) !important;
+}
+
 .btn-click:hover .credit {
     transform: rotate(360deg);
 }
@@ -467,6 +479,17 @@ li.dropdown-li {
     white-space: nowrap;
 }
 
+
+#search {
+    width: 100%;
+    border: 1px solid #fffFFF30;
+    border-radius: 5px;
+    background-color: transparent;
+    height: 2.25rem;
+    padding-left: 1rem;
+    color: white;
+    margin: 15px 0 15px 0
+}
 
 @media(max-width:768px) {
     .block-content img.image-adriel {
