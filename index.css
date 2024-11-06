@@ -603,6 +603,23 @@ li.dropdown-li {
 }
 .star {
     margin-left: 8px;
+    cursor: pointer;
+}
+
+.curtidas {
+    background: url("assets/star.svg") no-repeat center;
+    background-size: contain;
+    border: none;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+}
+
+.cont-curtidas{ 
+    margin-left: 4px;
+    font-size: 12px;
 }
 
 @media(max-width:768px) {

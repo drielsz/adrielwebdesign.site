@@ -11,10 +11,10 @@ const boxes = document.querySelectorAll(".container-card-projetos");
 
 
 hamburguer.addEventListener("click", () => {
-  hamburguer.classList.toggle("active");  
+  hamburguer.classList.toggle("active");
   navMenu.classList.toggle("active");
-  body.classList.toggle('no-scroll');     
-  main.classList.toggle('blur-main'); 
+  body.classList.toggle('no-scroll');
+  main.classList.toggle('blur-main');
   menuBarSession.forEach(session => session.classList.toggle("active"));
 
   navMenuBar.forEach(session => session.classList.toggle("active"));
@@ -48,7 +48,7 @@ function onSearch() {
     });
 
     const cardProjeto = document.querySelector('.card-projetos');
-    
+
     if (cardProjeto) { // Verifica se cardProjeto existe
       cardProjeto.style.justifyContent = 'flex-start';
       cardProjeto.style.gap = '0'
@@ -56,9 +56,11 @@ function onSearch() {
     // Esconde o <h2> se não houver itens visíveis
     const heading = section.querySelector('h2') || section.querySelector('h1');
     if (heading) {
-        heading.style.display = hasVisibleItems ? "" : "none";
+      heading.style.display = hasVisibleItems ? "" : "none";
     }
   });
 }
 
 document.querySelector("#search").addEventListener("input", onSearch);
+
+
