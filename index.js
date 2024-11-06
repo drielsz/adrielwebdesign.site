@@ -62,5 +62,3 @@ function onSearch() {
 }
 
 document.querySelector("#search").addEventListener("input", onSearch);
-
-
