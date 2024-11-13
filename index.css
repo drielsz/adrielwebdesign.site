@@ -622,7 +622,7 @@ aside ul {
     display: flex;
     flex-direction: column;
     /* topo | direita | inferior | esquerda */
-    margin: 10px 16px 0 16px;
+    margin: 32px 16px 0 16px;
 }
 
 aside ul li {

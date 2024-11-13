@@ -9,6 +9,7 @@ const dropdown = document.querySelector(".dropdown");
 const boxes = document.querySelectorAll(".container-card-projetos");
 
 
+
 hamburguer.addEventListener("click", () => {
   hamburguer.classList.toggle("active");
   navMenu.classList.toggle("active");
@@ -27,38 +28,46 @@ dropdownMenu.addEventListener("mouseleave", () => {
   dropdownMenu.classList.toggle("active");
 })
 
-function onSearch() {
-  const searchInput = document.querySelector("#search");
-  const filter = searchInput.value.toUpperCase();
-  const lists = document.querySelectorAll('.list'); // Seleciona cada seção
 
-  lists.forEach((section) => {
-    const items = section.querySelectorAll('li');
-    let hasVisibleItems = false;
-
-    items.forEach((item) => {
-      const text = item.textContent.toUpperCase();
-      if (text.includes(filter)) {
-        item.style.display = ""; // Mostra o item
-        hasVisibleItems = true; // Marca que há pelo menos um item visível
-      } else {
-        item.style.display = "none"; // Esconde o item
+const URL = 'https://websiteadr-backend-production.up.railway.app'
+function curtirPost (postId) {
+  fetch(`${URL}/curtir`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ post_id: postId }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("Dados recebidos do backend:", data);
+      if (data.message) {
+        console.log(data.message);
       }
+      // Atualiza o contador de curtidas no HTML
+      const curtidasElement = document.getElementById(`curtidas-${postId}`);
+      let currentCount = parseInt(curtidasElement.textContent) || 0;
+      curtidasElement.textContent = currentCount + 1;  // Incrementa a contagem
+    })
+    .catch(err => {
+      console.error("Erro:", err);
     });
-
-    const cardProjeto = document.querySelector('.card-projetos');
-
-    if (cardProjeto) { // Verifica se cardProjeto existe
-      cardProjeto.style.justifyContent = 'flex-start';
-      cardProjeto.style.gap = '0'
-    }
-    // Esconde o <h2> se não houver itens visíveis
-    const heading = section.querySelector('h2') || section.querySelector('h1');
-    if (heading) {
-      heading.style.display = hasVisibleItems ? "" : "none";
-    }
-  });
-}
-
-document.querySelector("#search").addEventListener("input", onSearch);
-
+};
+const obterCurtidasPorPost = () => {
+  fetch(`${URL}/curtidas`)
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(item => {
+        // Atualiza o elemento que mostra as curtidas de cada post
+        const curtidasElement = document.querySelector(`#curtidas-${item.post_id}`);
+        if (curtidasElement) {
+          curtidasElement.textContent = `${item.totalCurtidas}`;
+        }
+      });
+    })
+    .catch(err => {
+      console.error("Erro ao obter contagem de curtidas:", err);
+    });
+};
+// Chame essa função ao carregar a página
+obterCurtidasPorPost();
