@@ -222,7 +222,7 @@
 
 
 
-    <main class="mx-auto max-w items-center">
+    <main class="mx-auto max-w items-center hidden">
         <div class="block-content">
             <img class="image-adriel" srcset="assets/facehome.webp" alt="Adriel Foto">
             <div class="block-text">
@@ -301,7 +301,7 @@
                         <div class="eclipse-language javascript"></div>
                         <p class="name-language-pinned">JavaScript</p>
                         <div class="star">
-                            <input class="curtidas" type="button" onclick="curtirPost(2)">
+                            <input class="curtidas" type="button" onclick="curtirPost(2)"> 
                         </div>
                         <span class="cont-curtidas" id="curtidas-2"></span>
                     </div>
@@ -328,7 +328,7 @@
                         <div class="eclipse-language css"></div>
                         <p class="name-language-pinned">CSS</p>
                         <div class="star">
-                            <input class="curtidas" type="button" onclick="curtirPost(3)">
+                            <input class="curtidas" type="button" onclick="curtirPost(3)"> 
                         </div>
                         <span class="cont-curtidas" id="curtidas-3"></span>
                     </div>
@@ -365,55 +365,7 @@
         </footer>
     </main>
     <script src="index.js"></script>
-
-    <script>
-        const URL = 'https://websiteadr-backend-production.up.railway.app'
-
-        const curtirPost = (postId) => {
-            fetch(`${URL}/curtir`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ post_id: postId }),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Dados recebidos do backend:", data);
-
-                    if (data.message) {
-                        console.log(data.message);
-                    }
-
-                    // Atualiza o contador de curtidas no HTML
-                    const curtidasElement = document.getElementById(`curtidas-${postId}`);
-                    let currentCount = parseInt(curtidasElement.textContent) || 0;
-                    curtidasElement.textContent = currentCount + 1;  // Incrementa a contagem
-                })
-                .catch(err => {
-                    console.error("Erro:", err);
-                });
-        };
-        const obterCurtidasPorPost = () => {
-            fetch(`${URL}/curtidas`)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(item => {
-                        // Atualiza o elemento que mostra as curtidas de cada post
-                        const curtidasElement = document.querySelector(`#curtidas-${item.post_id}`);
-                        if (curtidasElement) {
-                            curtidasElement.textContent = `${item.totalCurtidas}`;
-                        }
-                    });
-                })
-                .catch(err => {
-                    console.error("Erro ao obter contagem de curtidas:", err);
-                });
-        };
-
-        // Chame essa função ao carregar a página
-        obterCurtidasPorPost();
-    </script>
+    <script src="view-animation.js"></script>
 </body>
 
 </html>

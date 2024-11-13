@@ -145,8 +145,8 @@ main {
 
 .block-content img.image-adriel {
     border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
-    width: 13rem;
-    height: 13rem;
+    width: 8rem;
+    height: 8rem;
     object-fit: cover;
     transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in;
     transform: translateZ(0);
@@ -194,8 +194,7 @@ p.description-dropdown {
     border-radius: var(--border-radius);
     border: 0;
     min-width: 12.8125rem;
-    max-height: 1.7rem;
-    min-height: 1.7rem;
+    min-height: 1.2rem;
 }
 
 .hamburguer {
@@ -269,6 +268,11 @@ li.nav-menubar-session.active:nth-child(7) {
 footer .copyright {
     margin-top: calc(var(--small-distance-height)/2);
     color: var(--gray-color)
+}
+
+footer img{ 
+    width: 20px;
+    height: 20px;
 }
 
 .h1-about {
@@ -642,6 +646,34 @@ aside p {
     padding-top: 1.25rem;
     padding-bottom: .5rem;
 }
+
+/* Estado inicial (antes da animação) */
+.hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+    will-change: opacity, transform;
+}
+
+/* Animação */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    70% {
+        opacity: 1;
+        transform: translateX(10px); /* Um pequeno avanço */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Classe de animação */
+.animate {
+    animation: appear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 
 @media (max-width: 1288px) {
     aside {
