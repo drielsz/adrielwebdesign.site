@@ -9,7 +9,6 @@ const dropdown = document.querySelector(".dropdown");
 const boxes = document.querySelectorAll(".container-card-projetos");
 
 
-
 hamburguer.addEventListener("click", () => {
   hamburguer.classList.toggle("active");
   navMenu.classList.toggle("active");

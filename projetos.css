@@ -36,20 +36,20 @@ p.description-session a {
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #fffFFF21;
-    animation: appear 0.8s ease-in-out forwards;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation: appear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes appear {
-    from {
+    0% {
         opacity: 0;
-        transform: scale(0.5);
+        transform: translateX(-20px);
     }
-
-    to {
+    70% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateX(10px); /* Um pequeno avanço */
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 

@@ -36,7 +36,7 @@ li a {
 }
 
 :root {
-    --background-color: #000000;
+    --background-color:hsl( 240 10% 3.9%);
     --border-radius: 12px;
     --white-color: #FAFAFA;
     --small-distance-width: 1.313rem;
@@ -78,6 +78,10 @@ nav {
 
 ul {
     list-style-type: none
+}
+
+.name-image  {
+    font-size: 20px;
 }
 
 .flex-col li {
