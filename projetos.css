@@ -36,21 +36,6 @@ p.description-session a {
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #fffFFF21;
-    animation: appear 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    70% {
-        opacity: 1;
-        transform: translateX(10px); /* Um pequeno avanço */
-    }
-    100% {
-        transform: translateX(0);
-    }
 }
 
 .card-projetos a.visit-button-card,
