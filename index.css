@@ -654,7 +654,7 @@ aside p {
 /* Estado inicial (antes da animação) */
 .hidden {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-20px);
     will-change: opacity, transform;
 }
 
@@ -666,10 +666,10 @@ aside p {
     }
     70% {
         opacity: 1;
-        transform: translateX(8px); /* Um pequeno avanço */
+        transform: translateX(4px); /* Um pequeno avanço */
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0, 0);
     }
 }
 
@@ -692,11 +692,6 @@ aside p {
 @media(max-width:768px) {
     aside {
         width: 18rem;
-    }
-
-    .block-content img.image-adriel {
-        width: 13rem;
-        height: 16rem
     }
 
     .flex-col ul.active,
@@ -763,7 +758,6 @@ aside p {
         width: 100%;
         justify-content: center;
         box-sizing: border-box;
-        min-height: 45px;
     }
 
     .block-buttons a:nth-child(2) {
