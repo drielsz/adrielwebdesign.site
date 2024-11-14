@@ -658,24 +658,32 @@ aside p {
     will-change: opacity, transform;
 }
 
-/* Animação */
-@keyframes appear {
+/* Animação para opacity (sem delay) */
+@keyframes fade-in {
     0% {
         opacity: 0;
-        transform: translateX(-25px);
-    }
-    70% {
-        opacity: 1;
-        transform: translateX(4px); /* Um pequeno avanço */
     }
     100% {
-        transform: translateX(0, 0);
+        opacity: 1;
     }
 }
 
-/* Classe de animação */
+/* Animação para transform (com delay) */
+@keyframes slide-in {
+    0% {
+        transform: translateX(-25px);
+    }
+    70% {
+        transform: translateX(4px); /* Pequeno avanço */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Classes aplicadas */
 .animate {
-    animation: appear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fade-in 0.8s ease forwards, slide-in 0.8s ease forwards;
 }
 
 
