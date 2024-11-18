@@ -603,12 +603,17 @@ li.dropdown-li {
 }
 
 aside {
-    width: 16%;
+    width: 335px;
     height: 100dvh;
     position: fixed;
     border-right: 1px solid #FFFFFF21;
 }
 
+@media (max-width: 1498px) {
+    aside {
+        width: 250px;
+    }
+}
 aside ul li a {
     color: white;
     font-size: 14px;
@@ -687,7 +692,7 @@ aside p {
 }
 
 
-@media (max-width: 1288px) {
+@media (max-width: 1384px) {
     aside {
         display: none;
     }
