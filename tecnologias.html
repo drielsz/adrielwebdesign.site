@@ -13,10 +13,21 @@
 </head>
 
 <body class="technolog">
-    <aside>
-        <ul>
+    <aside class="flex flex-column">
+        <ul class="flex-1">
+            <li>
+                <a href="index.html" class="py-2 px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-home">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Página Inicial</a>
+            </li>
+            <p class="py-5 py-2">Eu</p>
             <li class="tecnologias">
-                <a href="tecnologias.html">
+                <a href="tecnologias.html" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-laptop group-hover:text-primary transition-colors">
@@ -26,9 +37,7 @@
                     </svg>
                     Tecnologias e ferramentas</a>
             </li>
-
-            <p>Eu</p>
-            <li><a href="projetos.html">
+            <li><a href="projetos.html" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-folder-dot group-hover:text-primary transition-colors">
@@ -38,18 +47,8 @@
                         <circle cx="12" cy="13" r="1"></circle>
                     </svg>
                     Projetos</a></li>
-            <li>
-                <a href="index.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="feather feather-home">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                    Home</a>
-            </li>
-            <p>Rede sociais</p>
-            <li><a href="https://github.com/drielsz" target="_blank">
+            <p class="py-5 py-2">Rede sociais</p>
+            <li><a href="https://github.com/drielsz" target="_blank" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-github group-hover:text-primary transition-colors">
@@ -59,7 +58,7 @@
                         <path d="M9 18c-4.51 2-5-2-7-2"></path>
                     </svg>
                     Github</a></li>
-            <li><a href="https://www.linkedin.com/in/adriel-laurentino/" target="_blank">
+            <li><a href="https://www.linkedin.com/in/adriel-laurentino/" target="_blank" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-linkedin group-hover:text-primary transition-colors">
@@ -70,7 +69,7 @@
                     </svg>
                     Linkedin</a></li>
 
-            <li><a href="mailto:adriel.laurentino@icloud.com">
+            <li><a href="mailto:adriel.laurentino@icloud.com" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-mail group-hover:text-primary transition-colors">
@@ -79,6 +78,39 @@
                     </svg>
                     Email</a></li>
         </ul>
+        <div class="flex items-center theme-switch px-4 gap-3 justify-between overflow-hidden">
+            <div class="flex-1 h-14 flex items-center gap-2">
+                <svg class="icon-theme appear-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-moon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="icon-theme hidden-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-sun">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <p class="text-sm title">Troque o tema</p>
+            </div>
+            <svg class="icon-theme appear-icon-select select-theme magnetic" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+            <svg class="icon-theme hidden-icon-select select-theme magnetic" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
     </aside>
     <header>
         <nav class="mx-auto max-w items-center navbar">
@@ -222,7 +254,7 @@
     </header>
 
     <main class="mx-auto max-w hidden">
-        <h1 style="margin-bottom: 10px;">Tecnologias e ferramentas</h1>
+        <h1 class="title" style="margin-bottom: 10px;">Tecnologias e ferramentas</h1>
         <p style="margin-bottom: 10px" class="description-tech">Descubra as ferramentas e tecnologias que aprimoram
             minha jornada no
             desenvolvimento.
@@ -234,7 +266,7 @@
 
 
         <section class="list">
-            <h2>Front-end</h2>
+            <h2 class="title">Front-end</h2>
 
             <ul class="grid gap-x-2 gap-y-2 grid-cols-4">
                 <li>
@@ -301,7 +333,7 @@
         </section>
 
         <section class="list">
-            <h2>Design</h2>
+            <h2 class="title">Design</h2>
             <ul class="grid gap-x-2 gap-y-2 grid-cols-4">
                 <li>
                     <a href="">
@@ -327,7 +359,7 @@
         </section>
 
         <section class="list">
-            <h2>Banco de dados</h2>
+            <h2 class="title">Banco de dados</h2>
             <ul class="grid gap-x-2 gap-y-2 grid-cols-4">
                 <li>
                     <a href="">
@@ -363,7 +395,7 @@
         </section>
 
         <section class="list">
-            <h2>Back-end</h2>
+            <h2 class="title">Back-end</h2>
             <ul class="grid gap-x-2 gap-y-2 grid-cols-4">
                 <li>
                     <a href="">
@@ -409,7 +441,7 @@
         </section>
 
         <section class="list">
-            <h2>Controle de versões</h2>
+            <h2 class="title">Controle de versões</h2>
             <ul class="grid gap-x-2 gap-y-2 grid-cols-4">
                 <li>
                     <a href="">
@@ -437,26 +469,54 @@
             <div class="socials">
                 <div class="github">
                     <a href="https://github.com/drielsz" target="_blank">
-                        <img src="assets/github.svg" alt="github">
+                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.50008 15.8334C3.33341 17.0834 3.33341 13.75 1.66675 13.3334M13.3334 18.3334V15.1084C13.3647 14.711 13.311 14.3115 13.1759 13.9365C13.0409 13.5615 12.8275 13.2195 12.5501 12.9334C15.1667 12.6417 17.9167 11.65 17.9167 7.10003C17.9165 5.93655 17.469 4.8177 16.6667 3.97503C17.0466 2.95712 17.0198 1.83199 16.5917 0.833363C16.5917 0.833363 15.6084 0.541696 13.3334 2.0667C11.4234 1.54905 9.41007 1.54905 7.50008 2.0667C5.22508 0.541696 4.24175 0.833363 4.24175 0.833363C3.81373 1.83199 3.78687 2.95712 4.16675 3.97503C3.35852 4.82395 2.91052 5.95292 2.91675 7.12503C2.91675 11.6417 5.66675 12.6334 8.28341 12.9584C8.00925 13.2417 7.7978 13.5795 7.66284 13.95C7.52788 14.3204 7.47242 14.7151 7.50008 15.1084V18.3334"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
                     </a>
                 </div>
                 <div class="instagram">
                     <a href="https://www.instagram.com/adriellrnt/" target="_blank">
-                        <img src="assets/instagram.svg" alt="instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-instagram">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
                 </div>
                 </a>
                 <div class="linkedin">
                     <a href="https://www.linkedin.com/in/adriel-laurentino/" target="_blank">
-                        <img src="assets/linkedin.svg" alt="linkedin">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.3333 6.66663C14.6593 6.66663 15.9311 7.19341 16.8688 8.13109C17.8065 9.06877 18.3333 10.3405 18.3333 11.6666V17.5H14.9999V11.6666C14.9999 11.2246 14.8243 10.8007 14.5118 10.4881C14.1992 10.1756 13.7753 9.99996 13.3333 9.99996C12.8912 9.99996 12.4673 10.1756 12.1547 10.4881C11.8422 10.8007 11.6666 11.2246 11.6666 11.6666V17.5H8.33325V11.6666C8.33325 10.3405 8.86004 9.06877 9.79772 8.13109C10.7354 7.19341 12.0072 6.66663 13.3333 6.66663Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.00008 7.5H1.66675V17.5H5.00008V7.5Z" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M3.33341 4.99996C4.25389 4.99996 5.00008 4.25377 5.00008 3.33329C5.00008 2.41282 4.25389 1.66663 3.33341 1.66663C2.41294 1.66663 1.66675 2.41282 1.66675 3.33329C1.66675 4.25377 2.41294 4.99996 3.33341 4.99996Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
                     </a>
                 </div>
                 <div class="email">
                     <a href="mailto:adriel.laurentino@icloud.com" target="">
-                        <img src="assets/email.svg" alt="email">
+                        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.33341 3.33337H16.6667C17.5834 3.33337 18.3334 4.08337 18.3334 5.00004V15C18.3334 15.9167 17.5834 16.6667 16.6667 16.6667H3.33341C2.41675 16.6667 1.66675 15.9167 1.66675 15V5.00004C1.66675 4.08337 2.41675 3.33337 3.33341 3.33337Z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M18.3334 5L10.0001 10.8333L1.66675 5" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+
                     </a>
                 </div>
             </div>
-            <div class="copyright">@2024 Adriel Laurentino</div>
+            <div class="copyright">@2024 Adriel Oliveira</div>
         </footer>
     </main>
 

@@ -35,7 +35,7 @@ p.description-session a {
     flex-direction: column;
     padding: 20px;
     border-radius: 12px;
-    border: 1px solid #fffFFF21;
+    border: 1px solid var(--border-color);
 }
 
 .card-projetos a.visit-button-card,
@@ -63,15 +63,16 @@ p.description-session {
 }
 
 .card-projetos a.visit-button-card:first-child {
-    background-color: #fff;
+    background-color: var(--white-color);
+    color: var(--background-color);
     border: 0;
     margin-right: var(--small-distance-width)
 }
 
 .card-projetos a.visit-github-button-card {
     background-color: transparent;
-    border: 1px solid #fffFFF21;
-    color: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--white-color);
     text-wrap: nowrap
 }
 
@@ -90,14 +91,20 @@ p.description-session {
     text-decoration: none
 }
 
-.card-projetos .visit-button-card img {
+.card-projetos .visit-button-card svg {
     position: relative;
-    margin-right: 5px
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    stroke: var(--svg-color-button);
 }
 
-.card-projetos .visit-github-button-card img {
+.card-projetos .visit-github-button-card svg {
     position: relative;
-    margin-right: 10px
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    stroke: var(--white-color);
 }
 
 .description-card {
