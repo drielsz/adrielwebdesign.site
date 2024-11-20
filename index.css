@@ -864,11 +864,11 @@ aside p {
 
 @media (max-width: 1384px) {
     aside {
-        display: none;
+        display: none !important;
     }
 
     header {
-        display: block;
+        display: block !important;
     }
 }
 
