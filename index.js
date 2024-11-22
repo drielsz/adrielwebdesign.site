@@ -73,8 +73,6 @@ obterCurtidasPorPost();
 
 
 const SelectThemeButtons = document.querySelectorAll('.select-theme');
-const selectThemeDark = document.querySelector('.theme-dark');
-const selectThemeWhite = document.querySelector('.theme-white');
 const divSelectThemes = document.querySelector('.select-themes')
 
 SelectThemeButtons.forEach((selectbutton) => {
@@ -87,13 +85,13 @@ SelectThemeButtons.forEach((selectbutton) => {
   });
 });
 
-const themeDark = document.querySelector('.theme-dark');
-const themeWhite = document.querySelector('.theme-white');
+const themeDark = document.querySelectorAll('.theme-dark');
+const themeWhite = document.querySelectorAll('.theme-white');
 
-const moonIcon = document.querySelector('.moon-icon');
-const sunIcon = document.querySelector('.sun-icon')
+const moonIcon = document.querySelectorAll('.moon-icon');
+const sunIcon = document.querySelectorAll('.sun-icon')
 
-function animateView () {
+function animateView() {
   body.classList.add("animating");
   setTimeout(() => {
     body.classList.remove('animating')
@@ -111,12 +109,20 @@ function setTheme(theme) {
 
 function updateIcons(theme) {
   if (theme === 'white') {
-    sunIcon.classList.remove('active');
-    moonIcon.classList.add('active')
+    sunIcon.forEach((sunicon) => {
+      sunicon.classList.remove('active')
+    })
+    moonIcon.forEach((moonicon) => {
+      moonicon.classList.add('active')
+    })
   }
   else {
-    moonIcon.classList.remove('active');
-    sunIcon.classList.add('active')
+    moonIcon.forEach((moonicon) => {
+      moonicon.classList.remove('active')
+    })
+    sunIcon.forEach((sunicon) => {
+      sunicon.classList.add('active')
+    })
   }
 }
 
@@ -124,7 +130,7 @@ function addIconAnimation(icon) {
   icon.classList.add('animateVerticalSlideIcon')
 }
 
-function checkCurrenteTheme ()  {
+function checkCurrenteTheme() {
   const savedTheme = localStorage.getItem('theme') || 'dark'
   setTheme(savedTheme)
   updateIcons(savedTheme)
@@ -156,24 +162,32 @@ function updateSelectedTheme(theme) {
   }
 }
 
-
-themeWhite.addEventListener('click', () => {
-  selectThemeDark.classList.remove('selected-theme')
-  selectThemeWhite.classList.add('selected-theme')
-  setTheme('white');
-  updateIcons('white');
-  addIconAnimation(moonIcon);
-  animateView();
+themeWhite.forEach((themewhite) => {
+  themewhite.addEventListener('click', () => {
+    themeDark.forEach((themedark) => {
+      themedark.classList.remove('selected-theme')
+    })
+    themewhite.classList.add('selected-theme')
+    setTheme('white');
+    updateIcons('white');
+    addIconAnimation(moonIcon);
+    animateView();
+  })
 })
 
-themeDark.addEventListener('click', () => {
-  selectThemeDark.classList.add('selected-theme')
-  selectThemeWhite.classList.remove('selected-theme')
-  setTheme('dark');
-  updateIcons('dark');
-  addIconAnimation(sunIcon);
-  animateView();
+themeDark.forEach((themedark) => {
+  themedark.addEventListener('click', () => {
+    themedark.classList.add('selected-theme')
+    themeWhite.forEach((themewhite) => {
+      themewhite.classList.remove('selected-theme')
+    })
+    setTheme('dark');
+    updateIcons('dark');
+    addIconAnimation(sunIcon);
+    animateView();
+  })
 })
+
 
 checkCurrenteTheme()
 
@@ -182,5 +196,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyTheme(savedTheme);
   updateThemeIcons(savedTheme);
-  updateSelectedTheme(savedTheme);  
+  updateSelectedTheme(savedTheme);
 })
