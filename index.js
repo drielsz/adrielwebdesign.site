@@ -29,7 +29,7 @@ dropdownMenu.addEventListener("mouseleave", () => {
 
 
 const URL = 'https://websiteadr-backend-production.up.railway.app'
-function curtirPost (postId) {
+function curtirPost(postId) {
   fetch(`${URL}/curtir`, {
     method: "POST",
     headers: {
@@ -73,46 +73,114 @@ obterCurtidasPorPost();
 
 
 const SelectThemeButtons = document.querySelectorAll('.select-theme');
+const selectThemeDark = document.querySelector('.theme-dark');
+const selectThemeWhite = document.querySelector('.theme-white');
+const divSelectThemes = document.querySelector('.select-themes')
 
 SelectThemeButtons.forEach((selectbutton) => {
+  const appearIconsSelect = document.querySelectorAll('.appear-icon-select');
+  const hiddenIconSelect = document.querySelectorAll('.hidden-icon-select')
   selectbutton.addEventListener("click", () => {
-    const appearIcons = document.querySelectorAll('.appear-icon')
-    const hiddenIcons = document.querySelectorAll('.hidden-icon');
-    const appearIconsSelect = document.querySelectorAll('.appear-icon-select');
-    const hiddenIconSelect = document.querySelectorAll('.hidden-icon-select')
-    
-    document.body.classList.toggle("dark")
-    document.body.classList.toggle("white")
-    const currentTheme = body.classList.contains('dark') ? 'dark' : 'white';
-    localStorage.setItem('theme', currentTheme)
-    // Alterna as classes entre os ícones escondidos e visíveis
 
+    divSelectThemes.classList.toggle("active")
 
-    appearIcons.forEach((appearicon) => {
-      appearicon.classList.toggle('appear-icon');
-      appearicon.classList.toggle('hidden-icon');
-    });
-    hiddenIcons.forEach((hiddenicon) => {
-      hiddenicon.classList.toggle('hidden-icon');
-      hiddenicon.classList.toggle('appear-icon');
-      hiddenicon.classList.add('animateVerticalSlideIcon');
-    });
-    
-    appearIconsSelect.forEach((appearicon) => {
-      appearicon.classList.toggle('appear-icon-select');
-      appearicon.classList.toggle('hidden-icon-select');
-    });
-    hiddenIconSelect.forEach((hiddeniconselect) => {
-      hiddeniconselect.classList.toggle('hidden-icon-select');
-      hiddeniconselect.classList.toggle('appear-icon-select');
-    })
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme) {
-    body.classList.remove('dark', 'white')
-    body.classList.add(savedTheme)
+const themeDark = document.querySelector('.theme-dark');
+const themeWhite = document.querySelector('.theme-white');
+
+const moonIcon = document.querySelector('.moon-icon');
+const sunIcon = document.querySelector('.sun-icon')
+
+function animateView () {
+  body.classList.add("animating");
+  setTimeout(() => {
+    body.classList.remove('animating')
+  }, 500)
+}
+
+function setTheme(theme) {
+  const oppositeTheme = theme === 'white' ? 'dark' : 'white'
+
+  body.classList.remove(oppositeTheme);
+  body.classList.add(theme)
+
+  localStorage.setItem('theme', theme)
+}
+
+function updateIcons(theme) {
+  if (theme === 'white') {
+    sunIcon.classList.remove('active');
+    moonIcon.classList.add('active')
   }
+  else {
+    moonIcon.classList.remove('active');
+    sunIcon.classList.add('active')
+  }
+}
+
+function addIconAnimation(icon) {
+  icon.classList.add('animateVerticalSlideIcon')
+}
+
+function checkCurrenteTheme ()  {
+  const savedTheme = localStorage.getItem('theme') || 'dark'
+  setTheme(savedTheme)
+  updateIcons(savedTheme)
+}
+
+function applyTheme(theme) {
+  body.classList.remove('dark', 'white');
+  body.classList.add(theme);
+}
+
+function updateThemeIcons(theme) {
+  if (theme === 'dark') {
+    sunIcon.classList.add('active');
+    moonIcon.classList.remove('active');
+  } else if (theme === 'white') {
+    moonIcon.classList.add('active');
+    sunIcon.classList.remove('active');
+  }
+}
+
+function updateSelectedTheme(theme) {
+  selectThemeDark.classList.remove('selected-theme');
+  selectThemeWhite.classList.remove('selected-theme');
+
+  if (theme === 'dark') {
+    selectThemeDark.classList.add('selected-theme');
+  } else if (theme === 'white') {
+    selectThemeWhite.classList.add('selected-theme');
+  }
+}
+
+
+themeWhite.addEventListener('click', () => {
+  selectThemeDark.classList.remove('selected-theme')
+  selectThemeWhite.classList.add('selected-theme')
+  setTheme('white');
+  updateIcons('white');
+  addIconAnimation(moonIcon);
+  animateView();
+})
+
+themeDark.addEventListener('click', () => {
+  selectThemeDark.classList.add('selected-theme')
+  selectThemeWhite.classList.remove('selected-theme')
+  setTheme('dark');
+  updateIcons('dark');
+  addIconAnimation(sunIcon);
+  animateView();
+})
+
+checkCurrenteTheme()
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'white'; // Default para 'white'
+
+  applyTheme(savedTheme);
+  updateThemeIcons(savedTheme);
+  updateSelectedTheme(savedTheme);  
 })

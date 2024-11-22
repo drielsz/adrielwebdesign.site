@@ -72,6 +72,26 @@ body.white {
 body {
     background-color: var(--background-color);
     color: var(--white-color);
+    transition: background-color 0.5s ease;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    transform: scaleX(0);
+    transform-origin: left top;
+    transition: transform 0.5s ease;
+    z-index: -1;
+    overflow: hidden;
+}
+
+body.animating::before {
+    transform: scaleX(1);
 }
 
 html {
@@ -174,7 +194,7 @@ main {
     cursor: pointer
 }
 
-footer .socials svg{ 
+footer .socials svg {
     width: 19px;
     height: 19px;
 }
@@ -319,6 +339,7 @@ footer img {
 .title {
     color: var(--title-color);
 }
+
 .h1-about {
     margin-bottom: calc(var(--small-distance-height)/4)
 }
@@ -384,10 +405,15 @@ main.blur-main {
     background-color: #27272a;
 }
 
-.home a, .projetos a, .tecnologias a {
+.home a,
+.projetos a,
+.tecnologias a {
     color: var(--selected-page);
 }
-.home svg, .projetos svg, .tecnologias svg {
+
+.home svg,
+.projetos svg,
+.tecnologias svg {
     stroke: var(--selected-page);
 }
 
@@ -768,7 +794,7 @@ aside p {
     height: 20px;
 }
 
-.py-5{
+.py-5 {
     padding-top: 1.25rem;
 }
 
@@ -815,16 +841,28 @@ aside p {
     cursor: pointer;
 }
 
-.appear-icon {
-    display: block;   
-    transform: translateY(0px);
-    will-change: transform;
+
+.moon-icon {
+    display: none;
+}
+
+.moon-icon.active {
+    display: block;
+}
+
+.sun-icon {
+    display: none;
+}
+
+.sun-icon.active {
+    display: block;
 }
 
 @keyframes verticalSlideIcon {
     0% {
         transform: translateY(-50px);
     }
+
     100% {
         transform: translateY(0px);
     }
@@ -834,10 +872,6 @@ aside p {
     animation: verticalSlideIcon 0.4s ease forwards;
 }
 
-.hidden-icon {
-    display: none;
-    transform: translateY(-20px);
-}
 
 .overflow-hidden {
     overflow: hidden;
@@ -848,8 +882,10 @@ aside p {
     right: 20px;
     display: block;
     visibility: visible;
-    opacity: 1; /* Começa visível */
-    transition: opacity 0.2s ease, visibility 0s 0.2s; /* Transição suave para opacidade */
+    opacity: 1;
+    /* Começa visível */
+    transition: opacity 0.2s ease, visibility 0s 0.2s;
+    /* Transição suave para opacidade */
 }
 
 /* Estilos para os ícones invisíveis */
@@ -858,9 +894,73 @@ aside p {
     right: 20px;
     display: block;
     visibility: hidden;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.2s ease, visibility 0s 0.2s; /* Transição suave para opacidade */
+    opacity: 0;
+    /* Começa invisível */
+    transition: opacity 0.2s ease, visibility 0s 0.2s;
+    /* Transição suave para opacidade */
 }
+
+.select-themes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100px + 40px);
+    height: fit-content;
+    gap: 18px;
+    padding: .25rem;
+    background-color: var(--background-color);
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.4s ease, visibility 0s ease 0.4s; 
+}
+
+.select-themes.active {
+    opacity: 1;
+    visibility: visible; 
+    transition: opacity 0.4s ease, visibility 0s ease 0s; 
+}
+
+.select-themes .theme-dark,
+.select-themes .theme-white {
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-top: .357rem;
+    padding-bottom: .357rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    
+}
+
+.theme-white p, .theme-white svg {
+    stroke: var(--selected-page);
+    color: var(--selected-page);
+}
+
+.theme-dark svg, .theme-white svg {
+    width: 17px;
+    height: 17px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.selected-theme {
+    background-color: #27272a;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    left: 1px;
+    transform: translateY(0);
+    transition: background-color 0.5 ease;
+}
+
 
 @media (max-width: 1384px) {
     aside {
