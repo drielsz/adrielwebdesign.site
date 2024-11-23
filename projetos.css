@@ -6,17 +6,21 @@ p.description-session a {
 
 .card-projetos {
     display: flex;
-    flex-flow: wrap row;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: calc(var(--small-distance-height)/2)
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    gap: 20px; 
+    margin-top: calc(var(--small-distance-height) / 2);
+    position: relative;
+    width: 100%; 
 }
 
 .card-projetos input.image-principal-card {
     cursor: pointer;
-    transition: transform .5s;
+    transition: transform 0.5s;
     border-radius: 6px;
-    width: 340px
+    flex: 1 1 calc(33.333% - 20px); 
+    max-width: 340px;
+    width: 100%;
 }
 
 .card-projetos a:hover,
