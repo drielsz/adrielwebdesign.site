@@ -739,11 +739,11 @@ aside ul li:hover {
 }
 
 aside ul li:hover a {
-    color: var(--background-color);
+    color: var(--selected-page);
 }
 
 aside ul li:hover svg {
-    stroke: var(--background-color);
+    stroke: var(--selected-page);
 }
 
 aside svg {
@@ -955,17 +955,17 @@ aside p {
     display: flex;
     width: 100%;
     justify-content: flex-start;
+    align-items: center;
     padding-top: .357rem;
     padding-bottom: .357rem;
     padding-left: .5rem;
     padding-right: .5rem;
-
 }
 
 .theme-white p,
 .theme-white svg {
-    stroke: var(--selected-page);
-    color: var(--selected-page);
+    stroke: var(--white-color);
+    color: var(--white-color);
 }
 
 .theme-dark svg,
@@ -974,6 +974,11 @@ aside p {
     height: 17px;
     margin-right: 15px;
     flex-shrink: 0;
+}
+
+.theme-white.selected-theme p, .theme-white.selected-theme svg {
+    stroke: var(--selected-page);
+    color: var(--selected-page);
 }
 
 .selected-theme {

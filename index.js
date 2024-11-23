@@ -39,10 +39,6 @@ function curtirPost(postId) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log("Dados recebidos do backend:", data);
-      if (data.message) {
-        console.log(data.message);
-      }
       // Atualiza o contador de curtidas no HTML
       const curtidasElement = document.getElementById(`curtidas-${postId}`);
       let currentCount = parseInt(curtidasElement.textContent) || 0;
@@ -130,7 +126,7 @@ function addIconAnimation(icon) {
   icon.classList.add('animateVerticalSlideIcon')
 }
 
-function checkCurrenteTheme() {
+function checkCurrentTheme() {
   const savedTheme = localStorage.getItem('theme') || 'dark'
   setTheme(savedTheme)
   updateIcons(savedTheme)
@@ -142,25 +138,41 @@ function applyTheme(theme) {
 }
 
 function updateThemeIcons(theme) {
-  if (theme === 'dark') {
-    sunIcon.classList.add('active');
-    moonIcon.classList.remove('active');
-  } else if (theme === 'white') {
-    moonIcon.classList.add('active');
-    sunIcon.classList.remove('active');
-  }
+  moonIcon.forEach((moonicon) => {
+    if(theme === 'dark'){
+      moonicon.classList.remove('active')
+    }else {
+      moonicon.classList.add('active')
+    }
+  })
+  sunIcon.forEach((sunicon) => {
+    if(theme === 'white'){
+      sunicon.classList.remove('active')
+    }
+    else {
+      sunicon.classList.add('active')
+    }
+  })
 }
 
 function updateSelectedTheme(theme) {
-  selectThemeDark.classList.remove('selected-theme');
-  selectThemeWhite.classList.remove('selected-theme');
+  themeDark.forEach((themedark) => {
+    if (theme === 'dark') {
+      themedark.classList.add('selected-theme');
+    } else {
+      themedark.classList.remove('selected-theme');
+    }
+  });
 
-  if (theme === 'dark') {
-    selectThemeDark.classList.add('selected-theme');
-  } else if (theme === 'white') {
-    selectThemeWhite.classList.add('selected-theme');
-  }
+  themeWhite.forEach((themewhite) => {
+    if (theme === 'white') {
+      themewhite.classList.add('selected-theme');
+    } else {
+      themewhite.classList.remove('selected-theme');
+    }
+  });
 }
+
 
 themeWhite.forEach((themewhite) => {
   themewhite.addEventListener('click', () => {
@@ -170,7 +182,7 @@ themeWhite.forEach((themewhite) => {
     themewhite.classList.add('selected-theme')
     setTheme('white');
     updateIcons('white');
-    addIconAnimation(moonIcon);
+    moonIcon.forEach((moonicon) => {addIconAnimation(moonicon)})
     animateView();
   })
 })
@@ -183,18 +195,17 @@ themeDark.forEach((themedark) => {
     })
     setTheme('dark');
     updateIcons('dark');
-    addIconAnimation(sunIcon);
+    sunIcon.forEach((sunicon) => {addIconAnimation(sunicon)})
     animateView();
   })
 })
 
 
-checkCurrenteTheme()
+checkCurrentTheme()
 
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme') || 'white'; // Default para 'white'
-
+  const savedTheme = localStorage.getItem('theme') || 'dark'; // Default para 'white'
   applyTheme(savedTheme);
-  updateThemeIcons(savedTheme);
   updateSelectedTheme(savedTheme);
+  updateThemeIcons(savedTheme);
 })
