@@ -33,6 +33,7 @@ li a {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -176,10 +177,8 @@ svg {
 }
 
 main {
-    margin-left: 18rem !important;
     padding-top: var(--big-distance-height);
     height: 100dvh;
-    overflow: auto;
 }
 
 .block-buttons,
@@ -956,7 +955,6 @@ aside p {
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    box-sizing: border-box;
     padding-top: .357rem;
     padding-bottom: .357rem;
     padding-left: .5rem;
@@ -995,11 +993,13 @@ aside p {
     .block-buttons a {
         width: 100%;
         justify-content: center;
-        box-sizing: border-box;
     }
 
     .block-buttons a:nth-child(2) {
         margin-left: 0
+    }
+    main { 
+        margin-left: 18rem !important;
     }
 }
 
@@ -1017,6 +1017,9 @@ aside p {
 }
 
 @media(max-width:768px) {
+    main {
+        margin-left: 0px !important;
+    }
     aside {
         display: none !important;
     }
@@ -1032,7 +1035,6 @@ aside p {
 
     .nav-menu li.nav-menubar {
         margin: 20px 0 0 0px;
-        box-sizing: border-box;
         overflow: visible;
         justify-content: flex-start !important;
         align-items: center;
@@ -1062,7 +1064,6 @@ aside p {
         bottom: 0;
         margin: 0;
         flex-direction: column;
-        box-sizing: border-box;
         background-color: var(--background-color);
         width: 100vw;
         /* Garante que o padding não expanda o width */
