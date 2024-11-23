@@ -14,10 +14,11 @@
 <body>
     <aside class="flex flex-column">
         <ul class="flex-1">
-            <li>
+            <li class="home">
                 <a href="index.html" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-home">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
@@ -27,7 +28,7 @@
             <li>
                 <a href="tecnologias.html" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-laptop group-hover:text-primary transition-colors">
                         <path
                             d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16">
@@ -35,9 +36,9 @@
                     </svg>
                     Tecnologias e ferramentas</a>
             </li>
-            <li class="projetos"><a href="projetos.html" class="py-2 px-4">
+            <li><a href="projetos.html" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-folder-dot group-hover:text-primary transition-colors">
                         <path
                             d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z">
@@ -48,7 +49,7 @@
             <p class="py-5 py-2">Rede sociais</p>
             <li><a href="https://github.com/drielsz" target="_blank" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-github group-hover:text-primary transition-colors">
                         <path
                             d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
@@ -58,7 +59,7 @@
                     Github</a></li>
             <li><a href="https://www.linkedin.com/in/adriel-laurentino/" target="_blank" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-linkedin group-hover:text-primary transition-colors">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                         </path>
@@ -69,7 +70,7 @@
 
             <li><a href="mailto:adriel.laurentino@icloud.com" class="py-2 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-mail group-hover:text-primary transition-colors">
                         <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -78,12 +79,15 @@
         </ul>
         <div class="flex items-center theme-switch px-4 gap-3 justify-between overflow-hidden">
             <div class="flex-1 h-14 flex items-center gap-2">
-                <svg class="icon-theme appear-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+
+                <!-- moon -->
+                <svg class="icon-theme moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="feather feather-moon">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <svg class="icon-theme hidden-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                <!-- sun -->
+                <svg class="icon-theme sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                     viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="feather feather-sun">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -108,6 +112,33 @@
                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
                 <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
+
+            <div class="select-themes">
+                <div class="theme-dark">
+                    <svg class="icon-theme" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-moon">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <p class="text-sm">Escuro</p>
+                </div>
+                <div class="theme-white">
+                    <svg class="icon-theme" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-sun">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <p class="text-sm">Claro</p>
+                </div>
+            </div>
         </div>
     </aside>
     <header>

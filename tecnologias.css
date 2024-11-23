@@ -5,6 +5,10 @@
     position: relative
 }
 
+.rounded-language p {
+    color: var(--selected-page);
+}
+
 .rounded-language {
     background-color: var(--rounded-language-bgColor);
     padding: .5rem;

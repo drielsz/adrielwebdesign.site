@@ -176,7 +176,10 @@ svg {
 }
 
 main {
-    padding-top: var(--big-distance-height)
+    margin-left: 18rem !important;
+    padding-top: var(--big-distance-height);
+    height: 100dvh;
+    overflow: auto;
 }
 
 .block-buttons,
@@ -357,7 +360,7 @@ li.nav-menubar-session.active {
     display: flex
 }
 
-.cover-background-hamburguer {  
+.cover-background-hamburguer {
     border: 1px solid var(--border-color);
     border-radius: 5px;
     padding: 3px;
@@ -701,16 +704,12 @@ li.dropdown-li {
 }
 
 aside {
-    width: 18rem;
+    min-width: 18rem;
     height: 100dvh;
     position: fixed;
+    top: 0;
+    left: 0;
     border-right: 1px solid var(--border-color);
-}
-
-@media (max-width: 1498px) {
-    aside {
-        width: 250px;
-    }
 }
 
 aside ul li a {
@@ -941,14 +940,14 @@ aside p {
     border: 1px solid var(--border-color);
     border-radius: 2px;
     opacity: 0;
-    visibility: hidden; 
-    transition: opacity 0.4s ease, visibility 0s ease 0.4s; 
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0s ease 0.4s;
 }
 
 .select-themes.active {
     opacity: 1;
-    visibility: visible; 
-    transition: opacity 0.4s ease, visibility 0s ease 0s; 
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0s ease 0s;
 }
 
 .select-themes .theme-dark,
@@ -962,15 +961,17 @@ aside p {
     padding-bottom: .357rem;
     padding-left: .5rem;
     padding-right: .5rem;
-    
+
 }
 
-.theme-white p, .theme-white svg {
+.theme-white p,
+.theme-white svg {
     stroke: var(--selected-page);
     color: var(--selected-page);
 }
 
-.theme-dark svg, .theme-white svg {
+.theme-dark svg,
+.theme-white svg {
     width: 17px;
     height: 17px;
     margin-right: 15px;
@@ -986,20 +987,42 @@ aside p {
     transition: background-color 0.5 ease;
 }
 
-
-@media (max-width: 1384px) {
-    aside {
-        display: none !important;
+@media(max-width:1489px) {
+    .block-buttons {
+        flex-flow: column
     }
 
+    .block-buttons a {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .block-buttons a:nth-child(2) {
+        margin-left: 0
+    }
+}
+
+/* 
+@media (max-width: 1384px) {
     header {
         display: block !important;
+    }
+} */
+
+@media(max-width: 1143px) {
+    .card-projetos {
+        justify-content: center !important;
     }
 }
 
 @media(max-width:768px) {
     aside {
-        width: 18rem;
+        display: none !important;
+    }
+
+    header {
+        display: block;
     }
 
     .flex-col ul.active,
@@ -1058,17 +1081,5 @@ aside p {
         display: none
     }
 
-    .block-buttons {
-        flex-flow: column
-    }
 
-    .block-buttons a {
-        width: 100%;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-
-    .block-buttons a:nth-child(2) {
-        margin-left: 0
-    }
 }
