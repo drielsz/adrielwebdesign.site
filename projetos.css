@@ -136,7 +136,7 @@ h1.title-myprojects {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--white-color);
     position: fixed;
     right: 50px;
     bottom: 50px;
@@ -159,7 +159,8 @@ h1.title-myprojects {
     transform: translateX(50px) scale(0);
 }
 
-.scrollToTop img {
+.scrollToTop svg {
+    stroke: var(--background-color);
     width: 16px;
     height: 16px;
 }
