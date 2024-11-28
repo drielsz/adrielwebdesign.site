@@ -1,3 +1,4 @@
+
 const hamburguer = document.querySelector(".hamburguer");
 const navMenu = document.querySelector(".nav-menu");
 const body = document.body;
@@ -9,23 +10,27 @@ const dropdown = document.querySelector(".dropdown");
 const boxes = document.querySelectorAll(".container-card-projetos");
 
 
-hamburguer.addEventListener("click", () => {
-  hamburguer.classList.toggle("active");
-  navMenu.classList.toggle("active");
-  body.classList.toggle('no-scroll');
-  main.classList.toggle('blur-main');
-  menuBarSession.forEach(session => session.classList.toggle("active"));
+if (hamburguer && navMenu) {
+  hamburguer.addEventListener("click", () => {
+    hamburguer.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    body.classList.toggle('no-scroll');
+    main.classList.toggle('blur-main');
+    menuBarSession.forEach(session => session.classList.toggle("active"));
 
-  navMenuBar.forEach(session => session.classList.toggle("active"));
-});
+    navMenuBar.forEach(session => session.classList.toggle("active"));
+  });
+}
 
-dropdown.addEventListener("click", () => {
-  dropdownMenu.classList.toggle("active");
-})
+if (dropdown && dropdownMenu) {
+  dropdown.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("active");
+  })
 
-dropdownMenu.addEventListener("mouseleave", () => {
-  dropdownMenu.classList.toggle("active");
-})
+  dropdownMenu.addEventListener("mouseleave", () => {
+    dropdownMenu.classList.toggle("active");
+  })
+}
 
 
 const URL = 'https://websiteadr-backend-production.up.railway.app'
@@ -126,12 +131,12 @@ function updateIcons(theme) {
 }
 
 const addIconAnimation = {
- animateVerticalSlideIcon(icon){
-  icon.classList.add('animateVerticalSlideIcon')
- },
- animateOpacity(icon) {
-  icon.classList.add('animateOpacityIcon')
- }
+  animateVerticalSlideIcon(icon) {
+    icon.classList.add('animateVerticalSlideIcon')
+  },
+  animateOpacity(icon) {
+    icon.classList.add('animateOpacityIcon')
+  }
 }
 
 function checkCurrentTheme() {
@@ -147,14 +152,14 @@ function applyTheme(theme) {
 
 function updateThemeIcons(theme) {
   moonIcon.forEach((moonicon) => {
-    if(theme === 'dark'){
+    if (theme === 'dark') {
       moonicon.classList.remove('active')
-    }else {
+    } else {
       moonicon.classList.add('active')
     }
   })
   sunIcon.forEach((sunicon) => {
-    if(theme === 'white'){
+    if (theme === 'white') {
       sunicon.classList.remove('active')
     }
     else {
@@ -191,7 +196,7 @@ themeWhite.forEach((themewhite) => {
     setTheme('white');
     updateIcons('white');
     animateView();
-    moonIcon.forEach((moonicon) => {addIconAnimation.animateVerticalSlideIcon(moonicon)})
+    moonIcon.forEach((moonicon) => { addIconAnimation.animateVerticalSlideIcon(moonicon) })
   })
 })
 
@@ -204,24 +209,25 @@ themeDark.forEach((themedark) => {
     setTheme('dark');
     updateIcons('dark');
     animateView();
-    sunIcon.forEach((sunicon) => {addIconAnimation.animateVerticalSlideIcon(sunicon)})
+    sunIcon.forEach((sunicon) => { addIconAnimation.animateVerticalSlideIcon(sunicon) })
   })
 })
 
-chevronUp.addEventListener('click', () => {
-  chevronUp.classList.toggle('active');
-  chevronDown.classList.toggle('active');
-  addIconAnimation.animateOpacity(chevronDown)
-});
 
-// Para chevronDown (opcional, se precisar de reversão no clique dele)
-chevronDown.addEventListener('click', () => {
-  chevronUp.classList.toggle('active');
-  chevronDown.classList.toggle('active');
-  addIconAnimation.animateOpacity(chevronUp)
-});
+if (chevronUp && chevronDown) {
+  chevronUp.addEventListener('click', () => {
+    chevronUp.classList.toggle('active');
+    chevronDown.classList.toggle('active');
+    addIconAnimation.animateOpacity(chevronDown)
+  });
 
-checkCurrentTheme()
+  // Para chevronDown (opcional, se precisar de reversão no clique dele)
+  chevronDown.addEventListener('click', () => {
+    chevronUp.classList.toggle('active');
+    chevronDown.classList.toggle('active');
+    addIconAnimation.animateOpacity(chevronUp)
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'dark'; // Default para 'white'
@@ -229,3 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSelectedTheme(savedTheme);
   updateThemeIcons(savedTheme);
 })
+
+
+checkCurrentTheme()
