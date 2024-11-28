@@ -47,26 +47,26 @@ li a {
 }
 
 body.dark {
-    --background-color: hsl(240 10% 3.9%);
-    --selected-page: white;
-    --white-color: #FAFAFA;
-    --gray-color: #A5A2A2;
+    --background-color: #09090b;
+    --selected-page: #f4f5f7;
+    --white-color: #f4f5f7;
+    --gray-color: #e4e5e9;
     --border-color: #FFFFFF21;
-    --title-color: white;
-    --svg-color-button: black;
-    --yellow-color: yellow;
+    --title-color: #f4f5f7; 
+    --svg-color-button: #383941;
+    --yellow-color: #f2ff0d;
     --rounded-language-bgColor: #394c5c60;
 }
 
 body.white {
-    --background-color: white;
-    --selected-page: white;
-    --white-color: black;
+    --background-color: #efefef;
+    --selected-page: #efefef;
+    --white-color: #292929;
     --gray-color: #55504C;
     --border-color: #10101021;
-    --title-color: black;
-    --svg-color-button: white;
-    --yellow-color: #c9c92a;
+    --title-color: #292929;
+    --svg-color-button: #efefef;
+    --yellow-color: #d2dd04;
     --rounded-language-bgColor: #0f2126;
 }
 
