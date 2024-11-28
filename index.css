@@ -881,6 +881,36 @@ aside p {
     display: block;
 }
 
+/* chevron */
+.feather-chevron-up {
+    display: block;
+}
+
+.feather-chevron-up.active {
+    display: none;
+}
+
+.feather-chevron-down {
+    display: none;
+}
+
+.feather-chevron-down.active {
+    display: block;
+}
+
+@keyframes opacityIcon {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animateOpacityIcon {
+    animation: opacityIcon 0.4s ease forwards;
+}
+
 @keyframes verticalSlideIcon {
     0% {
         transform: translateY(-50px);
@@ -989,6 +1019,8 @@ aside p {
     transform: translateY(0);
     transition: background-color 0.5 ease;
 }
+
+
 
 @media(max-width:1489px) {
     .block-buttons {

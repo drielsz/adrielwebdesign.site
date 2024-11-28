@@ -87,6 +87,9 @@ const themeWhite = document.querySelectorAll('.theme-white');
 const moonIcon = document.querySelectorAll('.moon-icon');
 const sunIcon = document.querySelectorAll('.sun-icon')
 
+const chevronUp = document.querySelector('.feather-chevron-up')
+const chevronDown = document.querySelector('.feather-chevron-down')
+
 function animateView() {
   body.classList.add("animating");
   setTimeout(() => {
@@ -122,8 +125,13 @@ function updateIcons(theme) {
   }
 }
 
-function addIconAnimation(icon) {
+const addIconAnimation = {
+ animateVerticalSlideIcon(icon){
   icon.classList.add('animateVerticalSlideIcon')
+ },
+ animateOpacity(icon) {
+  icon.classList.add('animateOpacityIcon')
+ }
 }
 
 function checkCurrentTheme() {
@@ -182,8 +190,8 @@ themeWhite.forEach((themewhite) => {
     themewhite.classList.add('selected-theme')
     setTheme('white');
     updateIcons('white');
-    moonIcon.forEach((moonicon) => {addIconAnimation(moonicon)})
     animateView();
+    moonIcon.forEach((moonicon) => {addIconAnimation.animateVerticalSlideIcon(moonicon)})
   })
 })
 
@@ -195,11 +203,23 @@ themeDark.forEach((themedark) => {
     })
     setTheme('dark');
     updateIcons('dark');
-    sunIcon.forEach((sunicon) => {addIconAnimation(sunicon)})
     animateView();
+    sunIcon.forEach((sunicon) => {addIconAnimation.animateVerticalSlideIcon(sunicon)})
   })
 })
 
+chevronUp.addEventListener('click', () => {
+  chevronUp.classList.toggle('active');
+  chevronDown.classList.toggle('active');
+  addIconAnimation.animateOpacity(chevronDown)
+});
+
+// Para chevronDown (opcional, se precisar de reversão no clique dele)
+chevronDown.addEventListener('click', () => {
+  chevronUp.classList.toggle('active');
+  chevronDown.classList.toggle('active');
+  addIconAnimation.animateOpacity(chevronUp)
+});
 
 checkCurrentTheme()
 
