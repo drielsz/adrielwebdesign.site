@@ -213,7 +213,6 @@ themeDark.forEach((themedark) => {
   })
 })
 
-
 if (chevronUp && chevronDown) {
   chevronUp.addEventListener('click', () => {
     chevronUp.classList.toggle('active');
