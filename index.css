@@ -56,6 +56,8 @@ body.dark {
     --svg-color-button: #383941;
     --yellow-color: #f2ff0d;
     --rounded-language-bgColor: #394c5c60;
+
+    --hover-button: #e2e3e6;
 }
 
 body.white {
@@ -67,7 +69,9 @@ body.white {
     --title-color: #292929;
     --svg-color-button: #efefef;
     --yellow-color: #d2dd04;
-    --rounded-language-bgColor: #0f2126;
+    --rounded-language-bgColor: #394c5c;
+
+    --hover-button: #3d3d3d;
 }
 
 body {
@@ -268,13 +272,17 @@ p.description-dropdown {
     color: var(--background-color)
 }
 
-.block-buttons a:hover,
+.block-buttons a:first-child:hover {
+    background-color: var(--hover-button);
+}
+
+.block-buttons a:nth-child(2):hover,
 .container-card:hover p,
 footer .socials .email:hover,
 footer .socials .github:hover,
 footer .socials .instagram:hover,
 footer .socials .linkedin:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .block-buttons .contact-tag {
@@ -575,6 +583,11 @@ li.dropdown-li {
     padding-left: 1rem;
     color: white;
     margin: 15px 0 15px 0
+}
+
+.pinned svg.pin {
+    width: 14px;
+    height: 14px;
 }
 
 .language-pinned {
