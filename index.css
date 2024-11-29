@@ -1051,7 +1051,7 @@ aside p {
 
 
 
-@media(max-width:1489px) {
+@media(max-width:93.0625rem) /* 1489px */ {
     .block-buttons {
         flex-flow: column
     }
@@ -1069,20 +1069,13 @@ aside p {
     }
 }
 
-/* 
-@media (max-width: 1384px) {
-    header {
-        display: block !important;
-    }
-} */
-
-@media(max-width: 1143px) {
+@media(max-width: 71.4375rem) { /* 1143px */
     .card-projetos {
         justify-content: center !important;
     }
 }
 
-@media(max-width:768px) {
+@media(max-width:48rem) /* 768px */ {
     main {
         margin-left: 0px !important;
     }
