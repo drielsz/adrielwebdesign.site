@@ -8,7 +8,7 @@ p.description-session a {
     display: flex;
     flex-wrap: wrap; 
     justify-content: space-between; 
-    gap: 20px; 
+    gap: 1.25rem; 
     margin-top: calc(var(--small-distance-height) / 2);
     position: relative;
     width: 100%; 
@@ -18,14 +18,12 @@ p.description-session a {
     cursor: pointer;
     transition: transform 0.5s;
     border-radius: 6px;
-    flex: 1 1 calc(33.333% - 20px); 
-    max-width: 340px;
     width: 100%;
 }
 
 .card-projetos a:hover,
 .card-projetos input.image-principal-card:hover {
-    transform: scale(1.05)
+    transform: scale(1.03)
 }
 
 .container-card-image {
@@ -34,10 +32,10 @@ p.description-session a {
 }
 
 .container-card-projetos {
-    width: 340px;
+    width: 21.25rem;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 1.25rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
 }
@@ -81,8 +79,9 @@ p.description-session {
 }
 
 .card-projetos img {
-    width: 20px;
-    height: 20px
+    --side-length: 20px; 
+    width: var(--side-length);
+    height: var(--side-length)
 }
 
 .buttons-card-projetos {
@@ -98,21 +97,23 @@ p.description-session {
 .card-projetos .visit-button-card svg {
     position: relative;
     margin-right: 8px;
-    width: 18px;
-    height: 18px;
+    --side-length: 1.125rem;
+    width: var(--side-length);
+    height: var(--side-length);
     stroke: var(--svg-color-button);
 }
 
 .card-projetos .visit-github-button-card svg {
     position: relative;
     margin-right: 8px;
-    width: 16px;
-    height: 16px;
+    --side-length: 1rem;
+    width: var(--side-length);
+    height: var(--side-length);
     stroke: var(--white-color);
 }
 
 .description-card {
-    height: 120px
+    height: 7.5rem;
 }
 
 h1.title-myprojects {
@@ -133,9 +134,10 @@ h1.title-myprojects {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    --side-length: 3.75rem;
+    width: var(--side-length);
+    height: var(--side-length);
+    clip-path: circle(50%);
     background-color: var(--white-color);
     position: fixed;
     right: 50px;
@@ -161,8 +163,9 @@ h1.title-myprojects {
 
 .scrollToTop svg {
     stroke: var(--background-color);
-    width: 16px;
-    height: 16px;
+    --side-length: 1rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 @media(max-width:854px) {

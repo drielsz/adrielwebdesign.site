@@ -83,8 +83,7 @@ body {
 body::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100vw;
     background: var(--background-color);
@@ -136,7 +135,7 @@ svg {
 }
 
 .name-image {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .flex-col li {
@@ -153,7 +152,7 @@ svg {
 }
 
 .max-w {
-    max-width: 50rem
+    max-width: 50rem;
 }
 
 .mx-auto {
@@ -201,14 +200,16 @@ main {
 }
 
 footer .socials svg {
-    width: 19px;
-    height: 19px;
+    --side-length: 1.1875rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 .block-content img.image-adriel {
     border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
-    width: 8rem;
-    height: 8rem;
+    --side-length: 8rem;
+    width: var(--side-length);
+    height: var(--side-length);
     object-fit: cover;
     transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in;
     transform: translateZ(0);
@@ -238,20 +239,23 @@ p.description-dropdown {
 }
 
 .block-buttons #social-svg {
-    width: 18px;
-    height: 18px;
+    --side-length: 1.125rem;
+    width: var(--side-length);
+    height: var(--side-length);
     margin-left: 5px;
     stroke: var(--svg-color-button);
 }
 
 .block-buttons svg#link-contact {
-    width: 15px;
-    height: 15px;
+    --side-length: .9375rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 
 .block-buttons #link-contact {
-    margin-left: 8px !important;
+    --margin-left: .5rem;
+    margin-left: var(--margin-left) !important;
 }
 
 .block-buttons a {
@@ -332,7 +336,7 @@ li.nav-menubar-session.active:nth-child(7) {
 }
 
 .socials div {
-    margin-right: 15px
+    margin-right: .9375rem
 }
 
 footer .copyright {
@@ -341,8 +345,9 @@ footer .copyright {
 }
 
 footer img {
-    width: 20px;
-    height: 20px;
+    --side-length: 1.25rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 
@@ -357,7 +362,7 @@ footer img {
 .hamburguer {
     display: none;
     cursor: pointer;
-    padding: 10px;
+    padding: .625rem;
     border-radius: 6px
 }
 
@@ -370,24 +375,25 @@ li.nav-menubar-session.active {
 .cover-background-hamburguer {
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    padding: 3px;
+    padding: .1875rem;
 }
 
 .change-theme {
-    margin-right: 10px;
+    margin-right: .625rem;
     border: 1px solid var(--border-color);
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    padding: 3px;
+    padding: .1875rem;
 }
 
 .change-theme svg {
     margin: 0 !important;
-    width: 16px !important;
-    height: 16px !important;
+    --side-length: 1rem;
+    width: var(--side-length) !important;
+    height: var(--side-length) !important;
 }
 
 .justify-center {
@@ -395,9 +401,9 @@ li.nav-menubar-session.active {
 }
 
 .bar {
-    width: 13px;
-    height: 2px;
-    margin: 2px auto;
+    width: .8125rem;
+    height: .125rem;
+    margin: .125rem auto;
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     background-color: var(--white-color);
@@ -422,8 +428,9 @@ main.blur-main {
 }
 
 .nav-menu svg {
-    height: 16px;
-    width: 16px
+    --side-length: 1rem;
+    height: var(--side-length);
+    width: var(--side-length)
 }
 
 .nav-menu li.nav-menubar {
@@ -476,7 +483,7 @@ li.nav-item:first-child img {
     border-radius: 6px;
     top: 80px;
     background-color: #000;
-    width: 300px;
+    width: 18.75rem;
     height: fit-content;
     padding: var(--small-distance-width);
     transition: visibility .2s ease-in, opacity .2s ease-in;
@@ -566,9 +573,8 @@ li.dropdown-li {
 
 .oliveira {
     position: absolute;
+    inset: 0;
     opacity: 1;
-    top: 0;
-    left: 0;
     transform: translateX(2.95em);
     white-space: nowrap;
 }
@@ -587,8 +593,9 @@ li.dropdown-li {
 
 .pinned svg.pin {
     fill: var(--white-color);
-    width: 14px;
-    height: 14px;
+    --side-length: .875rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 .language-pinned {
@@ -598,8 +605,9 @@ li.dropdown-li {
 }
 
 .eclipse-language {
-    width: 10px;
-    height: 10px;
+    --side-length: .625rem;
+    width: var(--side-length);
+    height: var(--side-length);
     border-radius: 50%;
 }
 
@@ -615,8 +623,9 @@ li.dropdown-li {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
+    --side-length: 1rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 .star img {
@@ -653,36 +662,38 @@ li.dropdown-li {
     color: #B7BDC8;
     border-radius: 20px;
     width: fit-content;
-    width: 40px;
-    height: 15px;
-    padding: 2px;
+    width: 2.5rem;
+    height: .9375rem;
+    padding: .125rem;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-left: 8px;
+    margin-left: .5rem;
 }
 
 .privacy p {
-    font-size: 12px;
+    font-size: .75rem;
 }
 
 .container-pinned .title-pinned {
     color: #74B9FF;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 .container-pinned .title-pinned:hover {
     text-decoration: underline;
 }
 
-
-
 .description-pinned {
     margin-bottom: calc(var(--small-distance-height) / 4);
-    height: 60px;
-    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    min-height: 3.75rem;
+    font-size: .875rem;
 }
 
 .description-pinned,
@@ -691,11 +702,11 @@ li.dropdown-li {
 }
 
 .eclipse-language {
-    margin-right: 4px;
+    margin-right: .25rem;
 }
 
 .star {
-    margin-left: 8px;
+    margin-left: .5rem;
     cursor: pointer;
 }
 
@@ -703,16 +714,17 @@ li.dropdown-li {
     background: url("assets/star.svg") no-repeat center;
     background-size: contain;
     border: none;
-    width: 16px;
-    height: 16px;
+    --side-length: 1rem;
+    width: var(--side-length);
+    height: var(--side-length);
     cursor: pointer;
     display: inline-block;
     padding: 0;
 }
 
 .cont-curtidas {
-    margin-left: 4px;
-    font-size: 12px;
+    margin-left: .25rem;
+    font-size: .75rem;
     color: var(--gray-color);
 }
 
@@ -727,7 +739,7 @@ aside {
 
 aside ul li a {
     color: var(--white-color);
-    font-size: 14px;
+    font-size: .875rem;
     display: inline-flex;
     align-items: center;
     width: 100%;
@@ -737,11 +749,11 @@ aside ul {
     display: flex;
     flex-direction: column;
     /* topo | direita | inferior | esquerda */
-    margin: 32px 16px 0 16px;
+    margin: 2rem 1rem 0 1rem;
 }
 
 aside ul li {
-    height: 36px;
+    height: 2.25rem;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -761,15 +773,16 @@ aside ul li:hover svg {
 }
 
 aside svg {
-    width: 14px;
-    height: 14px;
+    --side-length: .875rem;
+    width: var(--side-length);
+    height: var(--side-length);
     color: white;
-    margin-right: 7px;
+    margin-right: .4375rem;
 }
 
 aside p {
     color: var(--white-color);
-    font-size: 12px;
+    font-size: .75rem;
 }
 
 
@@ -827,8 +840,9 @@ aside p {
 }
 
 .icon-theme {
-    width: 20px;
-    height: 20px;
+    --side-length: 1.25rem;
+    width: var(--side-length);
+    height: var(--side-length);
 }
 
 .py-5 {
@@ -972,9 +986,9 @@ aside p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: calc(100px + 40px);
+    width: calc(6.25rem + 2.5rem);
     height: fit-content;
-    gap: 18px;
+    gap: 1.125rem;
     padding: .25rem;
     background-color: var(--background-color);
     position: absolute;
@@ -1014,9 +1028,10 @@ aside p {
 
 .theme-dark svg,
 .theme-white svg {
-    width: 17px;
-    height: 17px;
-    margin-right: 15px;
+    --side-length: 1.0625rem;
+    width: var(--side-length);
+    height: var(--side-length);
+    margin-right: .9375rem;
     flex-shrink: 0;
 }
 
@@ -1085,7 +1100,7 @@ aside p {
     }
 
     .nav-menu li.nav-menubar {
-        margin: 20px 0 0 0px;
+        margin: 1.25rem 0 0 0px;
         overflow: visible;
         justify-content: flex-start !important;
         align-items: center;
@@ -1102,18 +1117,15 @@ aside p {
     }
 
     .nav-menubar-session:nth-child(8) {
-        margin: 20px 0 0
+        margin: 1.25rem 0 0
     }
 
     .nav-menu {
         position: absolute;
+        inset: 0;
         overflow-y: scroll;
         min-height: 0;
         top: 6.4rem;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: 0;
         flex-direction: column;
         background-color: var(--background-color);
         width: 100vw;
